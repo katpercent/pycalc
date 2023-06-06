@@ -1,0 +1,62 @@
+    body{
+    background: rgba(9,7,35,255);
+    }
+    #calc{
+    height:100%;
+    width:100%;
+    background: rgba(13,8,49,255);
+    border-style: solid;
+    border-color: transparent;
+    }
+    #banner{
+    text-align: center;
+    color: rgba(148,149,170,255);
+    padding: 5px;
+    font-variant: small-caps;
+    font-size: 25px;
+    background: rgba(9,7,35,255);
+    border-color: transparent;
+    }
+    #operator{
+    text-align: right;
+    background: rgba(9,7,35,255);
+    color:rgba(204,190,136,255);
+    height:8.25%;
+    width: 100%;
+    border-color: transparent;
+    font-variant: small-caps;
+    font-size: 50px;
+    }
+    #result{
+    text-align: right;
+    background: rgba(9,7,35,255);
+    color:rgba(255,254,255,255);
+    height:15.25%;
+    width: 100%;
+    border-color: transparent;
+    font-variant: small-caps;
+    font-size: 60px;
+    animation: glow 1s ease-in-out infinite alternate;
+    }
+    .button{
+    width:22%;
+    margin-left: 2%;
+    margin-top: 1.5%;
+    padding: 28;
+    background-color: transparent;
+    color:rgba(230,240,243,255);
+    border-color: transparent;
+    }
+    .button:hover{
+    background-color: transparent;
+    color: rgba(230,240,243,255);
+    animation: glow 0.5s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes glow {
+    from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0;
+    }
+    to {
+    text-shadow: 0 0 10px #fff, 0 0 15px ;
+    }
+    }
