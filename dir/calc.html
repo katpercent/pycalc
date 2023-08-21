@@ -7,57 +7,44 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js" integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js" integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
-    <body>
-        <div id="calc">
-        <div id="banner">calculator</div>
+    <body id="body">
         <input id="operator" placeholder="0" readonly></input>
         <input id="result" placeholder="" readonly></input>
         <div id="buttons">
-        <button class="button" onclick="dis('(')" onkeydown="myFunction(event)">(</button>
-        <button class="button" onclick="dis(')')" onkeydown="myFunction(event)">)</button>
-        <button class="button" onclick="dis('^')" onkeydown="myFunction(event)">^</button>
+        <button class="button" onclick="dis('(')" onkeydown="addondisplay(event)">(</button>
+        <button class="button" onclick="dis(')')" onkeydown="addondisplay(event)">)</button>
+        <button class="button" onclick="dis('^')" onkeydown="addondisplay(event)">^</button>
         
-        <button class="button" onclick="dis('-')" onkeydown="myFunction(event)">-</button>
+        <button class="button" onclick="dis('-')" onkeydown="addondisplay(event)">-</button>
         <br>
-        <button class="button" onclick="dis('1')" onkeydown="myFunction(event)">1</button>
-        <button class="button" onclick="dis('2')" onkeydown="myFunction(event)">2</button>
-        <button class="button" onclick="dis('3')" onkeydown="myFunction(event)">3</button>
-        <button class="button" onclick="dis('+')" onkeydown="myFunction(event)">+</button>
+        <button class="button" onclick="dis('1')" onkeydown="addondisplay(event)">1</button>
+        <button class="button" onclick="dis('2')" onkeydown="addondisplay(event)">2</button>
+        <button class="button" onclick="dis('3')" onkeydown="addondisplay(event)">3</button>
+        <button class="button" onclick="dis('+')" onkeydown="addondisplay(event)">+</button>
         <br>
-        <button class="button" onclick="dis('4')" onkeydown="myFunction(event)">4</button>
-        <button class="button" onclick="dis('5')" onkeydown="myFunction(event)">5</button>
-        <button class="button" onclick="dis('6')" onkeydown="myFunction(event)">6</button>
-        <button class="button" onclick="dis('*')" onkeydown="myFunction(event)">x</button>
+        <button class="button" onclick="dis('4')" onkeydown="addondisplay(event)">4</button>
+        <button class="button" onclick="dis('5')" onkeydown="addondisplay(event)">5</button>
+        <button class="button" onclick="dis('6')" onkeydown="addondisplay(event)">6</button>
+        <button class="button" onclick="dis('*')" onkeydown="addondisplay(event)">x</button>
         <br>
-        <button class="button" onclick="dis('7')" onkeydown="myFunction(event)">7</button>
-        <button class="button" onclick="dis('8')" onkeydown="myFunction(event)">8</button>
-        <button class="button" onclick="dis('9')" onkeydown="myFunction(event)">9</button>
-        <button class="button" onclick="dis('/')" onkeydown="myFunction(event)">/</button>
+        <button class="button" onclick="dis('7')" onkeydown="addondisplay(event)">7</button>
+        <button class="button" onclick="dis('8')" onkeydown="addondisplay(event)">8</button>
+        <button class="button" onclick="dis('9')" onkeydown="addondisplay(event)">9</button>
+        <button class="button" onclick="dis('/')" onkeydown="addondisplay(event)">/</button>
         <br>
         <button class="button" onclick="clr()">C</button>
-        <button class="button" value="0" onclick="dis('0')" onkeydown="myFunction(event)">0</button>
-        <button class="button" value="." onclick="dis('.')" onkeydown="myFunction(event)">.</button>
+        <button class="button" value="0" onclick="dis('0')" onkeydown="addondisplay(event)">0</button>
+        <button class="button" value="." onclick="dis('.')" onkeydown="addondisplay(event)">.</button>
         <button class="button"  onclick="solve()">EXE</button>
         </div>
-        </div>
         <style>
-            #calc{
-            height:99%;
-            width:100%;
-            background: rgba(13,8,49,255);
-            }
-            #banner{
-            text-align: center;
-            color:rgba(148,149,170,255);
-            padding: 5px;
-            font-variant: small-caps;
-            font-size: 25px;
-            background: rgba(9,7,35,255);
+            body{
+                background-color: #000000;
             }
             #operator{
             text-align: right;
-            background: rgba(9,7,35,255);
-            color:rgba(204,190,136,255);
+            background: #000000;
+            color: #FFFFFF;
             height:8.25%;
             width: 100%;
             border-color: transparent;
@@ -66,45 +53,34 @@
             }
             #result{
             text-align: right;
-            background: rgba(9,7,35,255);
-            color:rgba(255,254,255,255);
+            background: #000000;
+            color: #FFFFFF;
             height:15.25%;
             width: 100%;
             border-color: transparent;
             font-variant: small-caps;
             font-size: 60px;
-            animation: glow 1s ease-in-out infinite alternate;
             }
             .button{
             width:22%;
             margin-left: 2%;
             margin-top: 1.5%;
             padding: 28;
-            background-color: transparent;
-            color:rgba(230,240,243,255);
-            border-color: transparent;
+            border-radius: 70%;
+            background-color: #d48801;
+            color: #FFFFFF;
+            border-color: #000;
             }
             .button:hover{
-            background-color: transparent;
-            color:rgba(230,240,243,255);
-            animation: glow 0.5s ease-in-out infinite alternate;
-            }
-            @-webkit-keyframes glow {
-            from {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0;
-            }
-            to {
-            text-shadow: 0 0 10px #fff, 0 0 15px ;
-            }
+            background-color: #f8b030;
+            color: #000000;
             }
         </style>
         <script>
-                // Function that display value
             function dis(val) {
                 document.getElementById("operator").value += val
             }
-
-            function myFunction(event) {
+            function addondisplay(event) {
                 if (event.key == '0' || event.key == '1' 
                     || event.key == '2' || event.key == '3'
                     || event.key == '4' || event.key == '5' 
@@ -116,25 +92,20 @@
                     document.getElementById("operator").value += event.key;
             }
 
-            var cal = document.getElementById("calc");
+            var cal = document.getElementById("body");
             cal.onkeyup = function (event) {
                 if (event.keyCode === 13) {
-                    console.log("Enter");
                     let x = document.getElementById("operator").value
                     console.log(x);
                     solve();
                 }
             }
-
-            // Function that evaluates the digit and return result
             function solve() {
                 document.getElementById("result").value = ""
                 let x = document.getElementById("operator").value
                 let y = math.evaluate(x)
-                document.getElementById("result").value +=" = "+ y
+                document.getElementById("result").value += y
             }
-
-            // Function that clear the display
             function clr() {
                 document.getElementById("result").value = ""
                 document.getElementById("operator").value = ""
