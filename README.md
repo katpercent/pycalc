@@ -52,4 +52,4 @@ This repository contains a simple calculator Graphical User Interface (GUI) impl
 
 ## Contact
 
-For any questions or inquiries, please email us at kgbcyber@icloud.com.
+For any questions or inquiries, please email us at katpercent@proton.me
